@@ -51,7 +51,7 @@ export const buttonTextBanner = css`
   background: transparent;
   border: 0px;
   color: white;
-  font-size: 14px;
+  font-size: 12px;
   height: 42px;
 `;
 export const landingPageContentTitle = css`
