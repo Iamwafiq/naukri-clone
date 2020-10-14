@@ -26,7 +26,6 @@ const LandingPageComponent = (props) => {
   };
   return (
     <div>
-      {/*<TopContainer />*/}
       <Header>
         <ButtonComponent
           colour="white"
@@ -42,11 +41,11 @@ const LandingPageComponent = (props) => {
             Welcome to <br /> My<span>Jobs</span>
             <ButtonComponent
               colour="white"
-              width="22%"
+              width="24%"
               backColour="#43AFFF"
               onClick={() => routoToPage('sign-up')}
               style={{ margin: '2em 0em' }}>
-              <div className={buttonTextBanner}>Get Started</div>
+              <button className={buttonTextBanner}>Get Started</button>
             </ButtonComponent>
           </div>
           <div className={landingHeadingImg}>

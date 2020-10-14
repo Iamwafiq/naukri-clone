@@ -43,16 +43,16 @@ export const content = css`
 `;
 export const moreContentImage = css`
   height: 120px;
-  width: 18%;
+  width: auto;
   margin: 5px 19px 25px 5px;
 `;
 export const buttonTextBanner = css`
-  position: relative;
-  margin: auto;
-  width: fit-content;
-  font-size: 16px;
-  top: 35%;
-  font-weight: 300;
+  width: 100%;
+  background: transparent;
+  border: 0px;
+  color: white;
+  font-size: 14px;
+  height: 42px;
 `;
 export const landingPageContentTitle = css`
   font-size: 24px;
@@ -64,7 +64,7 @@ export const landingPageInnerText = css`
 `;
 export const CardComponent = styled.div((props) => ({
   background: 'white',
-  width: '344px',
+  width: '328px',
   'box-shadow': '0px 3px 10px -3px rgba(67,175,255,0.3)',
   'border-radius': '8px',
   margin: '0 20px 30px 0%',
