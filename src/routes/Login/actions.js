@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILED } from './constants';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILED, RESET } from './constants';
 
 export function loginRequest(obj) {
   return {
@@ -21,5 +21,10 @@ export function loginFailed(obj) {
     payload: {
       ...obj,
     },
+  };
+}
+export function reset() {
+  return {
+    type: RESET,
   };
 }

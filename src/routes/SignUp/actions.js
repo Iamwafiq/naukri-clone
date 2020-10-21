@@ -1,4 +1,4 @@
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILED } from './constants';
+import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILED, RESET } from './constants';
 
 export function signUpRequest(obj) {
   return {
@@ -19,5 +19,10 @@ export function signUpFailed(obj) {
     payload: {
       ...obj,
     },
+  };
+}
+export function resetMessage() {
+  return {
+    type: RESET,
   };
 }

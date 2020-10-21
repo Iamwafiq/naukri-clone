@@ -1,4 +1,4 @@
-import { SIGNUP_SUCCESS, SIGNUP_FAILED } from './constants';
+import { SIGNUP_SUCCESS, SIGNUP_FAILED, RESET } from './constants';
 
 // The initial state of the App
 export const initialState = {
@@ -20,6 +20,13 @@ export const signUpReducer = (state = initialState, action) => {
         signedUp: false,
         message: action.payload.message,
         errorTs: Date.now(),
+      };
+    case RESET:
+      return {
+        ...state,
+        signedUp: false,
+        message: {},
+        errorTs: "",
       };
     default:
       return state;

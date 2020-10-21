@@ -14,7 +14,7 @@ import { informationText, formInnerText } from './style';
 import Header from '../../../components/Header';
 import TopContainer from '../../../components/TopContainer';
 import ErrorMessageContainer from '../../../components/ErrorMessage';
-import { loginRequest } from '../actions';
+import { loginRequest, reset } from '../actions';
 
 const LoginComponent = (props) => {
   const { history, dispatch, loginReducer } = props;
@@ -49,6 +49,7 @@ const LoginComponent = (props) => {
   }, [errorTs]);
 
   const routoToPage = (arg) => {
+    dispatch(reset())
     history.push(`/${arg}`);
   };
   const login = () => {

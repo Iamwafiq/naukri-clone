@@ -20,7 +20,7 @@ import {
 } from './style';
 import TopContainer from '../../../components/TopContainer';
 import ErrorMessageContainer from '../../../components/ErrorMessage';
-import { signUpRequest } from '../actions';
+import { signUpRequest, resetMessage } from '../actions';
 
 const SignUpComponent = (props) => {
   const { history, dispatch, signUpReducer } = props;
@@ -41,6 +41,7 @@ const SignUpComponent = (props) => {
   });
 
   const routoToPage = (arg) => {
+    dispatch(resetMessage())
     history.push(`/${arg}`);
   };
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN_FAILED } from './constants';
+import { LOGIN_SUCCESS, LOGIN_FAILED, RESET } from './constants';
 
 // The initial state of the App
 export const initialState = {
@@ -20,6 +20,13 @@ export const loginReducer = (state = initialState, action) => {
         isLoggedIn: false,
         message: action.payload.message,
         errorTs: Date.now(),
+      };
+     case RESET:
+      return {
+        ...state,
+        isLoggedIn: false,
+        message: {},
+        errorTs: "",
       };
     default:
       return state;
