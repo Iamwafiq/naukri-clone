@@ -21,17 +21,18 @@ export const initialState = {
 export const dashboardReducer = (state = initialState, action) => {
   switch (action.type) {
     case POSTED_JOBS_SUCCESS:
+      console.log(action.payload)
       return {
         ...state,
-        totalJobs: action.payload.response.data.data,
-        totalJobCount: action.payload.response.data.metadata.count,
         loading: false,
+        totalJobs: action.payload.response.data && action.payload.response.data.data || [],
+        totalJobCount: action.payload.response.data && action.payload.response.data.metadata && action.payload.response.data.metadata.count || '',
       };
     case JOBS_SUCCESS:
       return {
         ...state,
-        totalJobs: action.payload.response.data,
-        totalJobCount: action.payload.response.metadata.count,
+        totalJobs: action.payload.response.data || [],
+        totalJobCount: action.payload.response.metadata && action.payload.response.metadata.count || '',
         loading: false,
       };
     case APPLY_JOB_SUCCESS:

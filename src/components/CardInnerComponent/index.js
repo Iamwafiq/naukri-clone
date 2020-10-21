@@ -19,6 +19,7 @@ const CardInnerComponent = (props) => {
     id,
     setShowModal,
     index,
+    noButton,
   } = props;
 
   return (
@@ -32,12 +33,12 @@ const CardInnerComponent = (props) => {
             style={{ 'font-size': '16px', padding: '2% 0' }}>
             {location}
           </span>
-          <ButtonCardComponent
+          {noButton?"":<ButtonCardComponent
             width={role === '0' ? '176px' : '76px'}
             left={left}
             onClick={() => onClick(id)}>
             {role === '0' ? 'View Applications' : 'Apply'}
-          </ButtonCardComponent>
+          </ButtonCardComponent>}
         </div>
       </div>
     </CardComponent>

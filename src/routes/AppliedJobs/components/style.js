@@ -23,3 +23,24 @@ export const innerHead = css`
   font-size: 20px;
   color: white;
 `;
+export const noDataText = css`
+  width: 16em;
+  font-size: 16px;
+  color: gray;
+  position: relative;
+  left: -3em;
+  margin-top: 1em;
+`;
+export const noDataAvailable = css`
+  margin: auto;
+  position: relative;
+  margin: 15em 50em;
+`;
+export const buttonTextBanner = css`
+  position: relative;
+  margin: auto;
+  width: fit-content;
+  font-size: 14px;
+  top: 35%;
+  font-weight: 300;
+`;

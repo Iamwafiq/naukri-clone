@@ -57,16 +57,16 @@ const DashboardComponent = (props) => {
       dispatch(getJobs());
     }
   }, [jobApplied]);
-
+  useEffect(() => {
+    console.log(loading)
+  }, [loading]);
   useEffect(() => {
     if (showModal) {
       dispatch(getApplicants({ jobId }));
     }
   }, [showModal]);
   useEffect(() => {
-    if (role === '0') {
-      setLocalData(totalJobs);
-    } else if (role === '1') {
+    if(totalJobs.length){
       setLocalData(totalJobs);
     }
   }, [totalJobs]);
@@ -81,6 +81,7 @@ const DashboardComponent = (props) => {
       dispatch(applyJob({ jobId: arg }));
     }
   };
+  console.log(localData && localData.length,"<>",role,"<>",loading)
   return (
     <div>
       <Header>
@@ -90,7 +91,7 @@ const DashboardComponent = (props) => {
       <div
         className={dashboardContentSection}
         style={{ display: 'flex', 'flex-wrap': 'wrap' }}>
-        <div className={innerHead}>Jobs for you</div>
+        <div className={innerHead}>{role == '0'?"Jobs Posted by you":"Jobs for you"}</div>
         {!localData.length && role == '0' && !loading ? (
           <div>
             <div className={noDataAvailable}>
@@ -110,9 +111,7 @@ const DashboardComponent = (props) => {
             </div>
           </div>
         ) : (
-          ''
-        )}
-        <div className={parentCards}>
+          <div className={parentCards}>
           {localData &&
             localData.map((data, index) => (
               <CardInnerComponent
@@ -127,6 +126,8 @@ const DashboardComponent = (props) => {
               />
             ))}
         </div>
+        )}
+        
       </div>
       {showModal ? (
         <Modal>
